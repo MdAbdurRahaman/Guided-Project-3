@@ -171,11 +171,64 @@ docker build -t wine-quality-app .
 docker run -p 8080:8080 wine-quality-app
 ```
 
-### AWS EC2 & ECR GitHub Actions Pipeline
-The repository includes `.github/workflows/main.yaml` for automated deployment to AWS EC2:
-1. **Continuous Integration**: Code linting and automated test validation.
-2. **Continuous Delivery**: Builds Docker image and pushes to Amazon ECR registry.
-3. **Continuous Deployment**: Self-hosted runner pulls the latest Docker image and restarts the container on AWS EC2.
+### AWS EC2 & ECR GitHub Actions Deployment Setup
+
+The repository includes a complete production CI/CD workflow in [.github/workflows/main.yaml](file:///.github/workflows/main.yaml). Follow these steps to connect your AWS Cloud environment:
+
+#### 1. Create Amazon ECR Repository
+- Open AWS Console ➔ Navigate to **Amazon ECR** ➔ Create repository (e.g., `wine-app`).
+- Copy the ECR repository URI (e.g., `123456789012.dkr.ecr.us-east-1.amazonaws.com/wine-app`).
+
+#### 2. Launch AWS EC2 Instance & Install Docker
+- Launch an Ubuntu Server EC2 instance (`t2.medium` recommended).
+- Configure **Security Group**: Inbound Rules ➔ Add Custom TCP rule for Port `8080` (Source: `0.0.0.0/0`).
+- Connect via SSH and install Docker:
+  ```bash
+  sudo apt-get update -y
+  sudo apt-get upgrade -y
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+  sudo usermod -aG docker ubuntu
+  newgrp docker
+  ```
+
+#### 3. Setup GitHub Actions Self-Hosted Runner on EC2
+- In your GitHub Repo ➔ **Settings** ➔ **Actions** ➔ **Runners** ➔ **New self-hosted runner**.
+- Select **Linux** and run the provided command script inside your EC2 terminal.
+- Start runner service: `./run.sh`.
+
+#### 4. Configure GitHub Repository Secrets
+- In your GitHub Repo ➔ **Settings** ➔ **Secrets and variables** ➔ **Actions**:
+  - `AWS_ACCESS_KEY_ID`: Your AWS IAM User Access Key
+  - `AWS_SECRET_ACCESS_KEY`: Your AWS IAM User Secret Key
+  - `AWS_REGION`: AWS Region (e.g., `us-east-1`)
+  - `AWS_ECR_LOGIN_URI`: Your ECR URI host (e.g., `123456789012.dkr.ecr.us-east-1.amazonaws.com`)
+  - `ECR_REPOSITORY_NAME`: `wine-app`
+
+#### 5. Trigger Automatic Deployment
+- Any `git push origin main` triggers GitHub Actions to build the Docker image, push to AWS ECR, pull onto your EC2 runner, and launch the web server on `http://YOUR_EC2_PUBLIC_IP:8080`.
+
+---
+
+## 🎈 Free 1-Click Streamlit Community Cloud Deployment
+
+If you do not have an active AWS account, you can deploy this application for **100% FREE** using **Streamlit Community Cloud**:
+
+### 1️⃣ Run Streamlit Locally
+```bash
+streamlit run streamlit_app.py
+```
+Open `http://localhost:8501` to view your interactive dashboard locally.
+
+### 2️⃣ Deploy to Streamlit Cloud (1-Click Free Hosting)
+1. Push your repository to GitHub.
+2. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+3. Click **"New App"**.
+4. Select your Repository: `[YOUR_USERNAME]/End-to-End-MLOps-Wine-Quality-Project`.
+5. Set Main file path: `streamlit_app.py`.
+6. Click **Deploy!** 🚀
+
+Your live web app URL will be generated automatically (e.g. `https://wine-quality-mlops.streamlit.app`)!
 
 ---
 

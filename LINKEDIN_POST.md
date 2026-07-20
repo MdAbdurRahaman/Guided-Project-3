@@ -8,7 +8,7 @@
 
 In real-world data science, writing code in a Jupyter Notebook is only 20% of the job. Moving a machine learning model into production requires robust data validation, experiment tracking, modular software architecture, and automated CI/CD pipelines.
 
-To master production MLOps engineering, I built a complete **Wine Quality Prediction AI Engine** using Python, Scikit-Learn (ElasticNet), MLflow, Flask, Docker, and GitHub Actions! 🍷🎯
+To master production MLOps engineering, I built a complete **Wine Quality Prediction AI Engine** using Python, Scikit-Learn (ElasticNet), MLflow, Flask, Streamlit, Docker, and GitHub Actions! 🍷🎯
 
 ---
 
@@ -16,8 +16,8 @@ To master production MLOps engineering, I built a complete **Wine Quality Predic
 1️⃣ **Automated Data Ingestion & Validation**: Downloads raw wine data and validates feature columns and data types against custom `schema.yaml` specifications to prevent silent pipeline failures.
 2️⃣ **Modular Pipeline Architecture**: Built clean stage-by-stage pipelines (`src/mlProject/components/`) for data transformation, train/test splitting, and model training.
 3️⃣ **MLflow Experiment Tracking**: Tracks hyperparameters (`alpha`, `l1_ratio`), metrics (**RMSE: 0.6543, MAE: 0.5186, R²: 0.3379**), and registers trained model artifacts in MLflow.
-4️⃣ **Interactive Web UI**: Developed a Flask web application with a modern glassmorphism UI for real-time wine quality inference.
-5️⃣ **DevOps & Cloud CI/CD**: Containerized with **Docker** and automated via **GitHub Actions** for continuous deployment to **AWS EC2** via Amazon ECR.
+4️⃣ **Dual Interactive Web Apps**: Developed both a Flask web application and a 1-click **Streamlit Dashboard UI** for real-time wine quality inference.
+5️⃣ **DevOps & Multi-Cloud Deployment**: Containerized with **Docker** for AWS EC2 CI/CD and configured for instant 1-click **Streamlit Community Cloud** hosting.
 
 ---
 

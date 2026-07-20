@@ -26,10 +26,12 @@ env/
 ENV/
 .env
 
-# Project specific
+# Database & MLOps tracking
 artifacts/
 mlruns/
 logs/
+*.db
+mlflow.db
 .pytest_cache/
 .vscode/
 .idea/
