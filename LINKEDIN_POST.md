@@ -29,8 +29,9 @@ To master production MLOps engineering, I built a complete **Wine Quality Predic
 ---
 
 ### 📽️ Demo & Source Code:
+🌐 **Try the Live Interactive Web App**: https://guided-project-3.streamlit.app  
 📹 **Watch the 3-minute Presentation Video**: [INSERT YOUR VIDEO LINK HERE]  
-💻 **Explore the GitHub Repository**: [INSERT YOUR GITHUB REPO URL HERE]
+💻 **Explore the GitHub Repository**: https://github.com/MdAbdurRahaman/Guided-Project-3
 
 Special thanks to Krish Naik and the data science community for the guided tutorial inspiration! I'd love to connect and hear your feedback in the comments! 💬
 
