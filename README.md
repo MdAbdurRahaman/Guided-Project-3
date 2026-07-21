@@ -1,6 +1,6 @@
 # 🍷 End-to-End MLOps Wine Quality Prediction Project
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://guided-project-3-g5xafuurmgd8yanaxuu2c5.streamlit.app/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![MLflow](https://img.shields.io/badge/MLflow-Experiment%20Tracking-orange.svg)](https://mlflow.org/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ElasticNet-green.svg)](https://scikit-learn.org/)
@@ -8,7 +8,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Containerized-blue.svg)](https://www.docker.com/)
 [![CI/CD](https://img.shields.io/badge/GitHub%20Actions-Continuous%20Deployment-black.svg)](https://github.com/features/actions)
 
-> 🚀 **Live Interactive Web App**: Deploy in 1-Click for FREE via [Streamlit Community Cloud](https://share.streamlit.io/) (Main File: `streamlit_app.py`)
+> 🚀 **Live Interactive Web App**: [https://guided-project-3-g5xafuurmgd8yanaxuu2c5.streamlit.app/](https://guided-project-3-g5xafuurmgd8yanaxuu2c5.streamlit.app/)
 
 ## 📌 Executive Summary
 Predicting wine quality based on physico-chemical characteristics is a classic tabular regression problem with high business impact in manufacturing quality control. Traditional batch model deployment often suffers from data drift, lack of reproducibility, and manual configuration overhead.

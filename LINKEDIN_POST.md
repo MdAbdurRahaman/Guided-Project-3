@@ -29,7 +29,7 @@ To master production MLOps engineering, I built a complete **Wine Quality Predic
 ---
 
 ### 🌐 Live Demo & Project Resources:
-🌐 **Try the Live Interactive Web App**: [INSERT YOUR STREAMLIT APP URL HERE]  
+🌐 **Try the Live Interactive Web App**: https://guided-project-3-g5xafuurmgd8yanaxuu2c5.streamlit.app/  
 💻 **Explore the GitHub Repository**: https://github.com/MdAbdurRahaman/Guided-Project-3  
 📹 **Watch the 3-Minute Presentation Video**: [INSERT YOUR VIDEO LINK HERE]  
 
