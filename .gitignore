@@ -35,3 +35,7 @@ mlflow.db
 .pytest_cache/
 .vscode/
 .idea/
+
+# Excluded assignment notes
+LINKEDIN_POST.md
+VIDEO_TRANSCRIPT.md
